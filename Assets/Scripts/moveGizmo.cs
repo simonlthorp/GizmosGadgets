@@ -39,8 +39,11 @@ public class moveGizmo : MonoBehaviour {
         rb.transform.Translate(movement / 7.5f);
     }
 
-    void OnTriggerEnter(Collider other) {
-        if (other.gameObject.name == "Gadget") {
+    void OnTriggerStay(Collider other) {
+        if (other.gameObject.tag == "1Gadget") {
+            globalVars.acivate(false);
+            globalVars.help = false;
+            Debug.Log("helloo");
         }    
     }
 

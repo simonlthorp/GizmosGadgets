@@ -16,6 +16,7 @@ public class bootFlip : MonoBehaviour {
         if (Input.GetAxis("Fire1") != 0 && inTrigger) {
             if (Input.GetAxisRaw("Fire1") != 0) {
                 Debug.Log("Activate Boot");
+                globalVars.switchFlippedD = true;
             }
         }
     }

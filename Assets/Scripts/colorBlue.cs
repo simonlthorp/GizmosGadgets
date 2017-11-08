@@ -2,20 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class colorYellow : MonoBehaviour {
+public class colorBlue : MonoBehaviour {
 
-    public Material Yellow, Orange;
+    public Material Blue, Green, Purple;
     GameObject gadget;
     bool active;
     bool under;
 
-    // Use this for initialization
-    void Start() {
-        gadget = GameObject.Find("Gadget");
+	// Use this for initialization
+	void OnEnable() {
+        gadget = GameObject.Find(globalVars.gadName);
         active = false;
         under = false;
-    }
-
+	}
 	
 	// Update is called once per frame
 	void Update () {
@@ -23,22 +22,26 @@ public class colorYellow : MonoBehaviour {
             Renderer[] renderers = gadget.GetComponentsInChildren<Renderer>();
             foreach (var r in renderers) {
                 if (globalVars.Red) {
-                    r.material = Orange;
-                    globalVars.Orange = true;
+                    r.material = Purple;
+                    globalVars.Purple = true;
+                }
+                else if (globalVars.Yellow) {
+                    r.material = Green;
+                    globalVars.Green = true;
                 }
                 else {
-                    r.material = Yellow;
-                    globalVars.Yellow = true;
+                    r.material = Blue;
                 }
 
             }
             active = false;
         }
-	}
+    }
 
     void OnTriggerStay(Collider other) {
         under = true;
-        if (other.gameObject.name == "Gadget") {
+        if (other.gameObject.tag == "1Gadget") {
+
             if (globalVars.switchFlippedC) {
                 active = true;
                 globalVars.switchFlippedC = false;
@@ -49,7 +52,7 @@ public class colorYellow : MonoBehaviour {
 
     }
 
-    void OnTriggerExit(Collider other) {
+    void onTriggerExit(Collider other) {
         under = false;
     }
 }
