@@ -25,6 +25,7 @@ public class colorREd : MonoBehaviour {
             foreach (var r in renderers) {
                     r.material = Red;
                     globalVars.Red = true;
+                globalVars.gadColor = "Red";
             }
             active = false;
         }

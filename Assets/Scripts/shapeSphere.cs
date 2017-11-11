@@ -22,6 +22,7 @@ public class shapeSphere : MonoBehaviour {
         under = false;
         en = true;
         Debug.Log("PARENT: " + parent);
+        globalVars.gadShape = "Sphere";
     }
 
     void OnDisable() {

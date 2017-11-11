@@ -24,13 +24,18 @@ public class colorBlue : MonoBehaviour {
                 if (globalVars.Red) {
                     r.material = Purple;
                     globalVars.Purple = true;
+                    globalVars.gadColor = "Purple";
+
                 }
                 else if (globalVars.Yellow) {
                     r.material = Green;
                     globalVars.Green = true;
+                    globalVars.gadColor = "Green";
+
                 }
                 else {
                     r.material = Blue;
+                    globalVars.gadColor = "Blue";
                 }
 
             }

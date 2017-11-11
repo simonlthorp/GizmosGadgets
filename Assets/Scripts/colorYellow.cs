@@ -26,10 +26,14 @@ public class colorYellow : MonoBehaviour {
                 if (globalVars.Red) {
                     r.material = Orange;
                     globalVars.Orange = true;
+                    globalVars.gadColor = "Orange";
+
                 }
                 else {
                     r.material = Yellow;
                     globalVars.Yellow = true;
+                    globalVars.gadColor = "Yellow";
+
                 }
 
             }

@@ -4,14 +4,16 @@ using UnityEngine;
 
 public class moveGizmo : MonoBehaviour {
     private Rigidbody rb;
+    GameObject obj;
     bool faceMachine;
     int turn = 1;
+    bool objGet;
 
     // Use this for initialization
     void Start () {
         rb = GetComponent<Rigidbody>();
         faceMachine = false;
-
+        objGet = false;
     }
 
     // Update is called once per frame
@@ -35,16 +37,25 @@ public class moveGizmo : MonoBehaviour {
 
         Vector3 movement = new Vector3((turn*moveHorizontal), 0.0f, 0.0f);
 
+        if (globalVars.carry) {
+
+            globalVars.acivate(false);
+            globalVars.help = false;
+            Debug.Log("helloo");
+            globalVars.deployedGadget.gameObject.transform.position = new Vector3(transform.position.x, (transform.position.y + 0.5f), transform.position.z);
+        }
 
         rb.transform.Translate(movement / 7.5f);
     }
 
     void OnTriggerStay(Collider other) {
         if (other.gameObject.tag == "1Gadget") {
-            globalVars.acivate(false);
-            globalVars.help = false;
-            Debug.Log("helloo");
-        }    
+            objGet = true;
+            globalVars.carry = true;
+            globalVars.deployedGadget = other.gameObject;
+            Debug.Log("Shape: " + globalVars.gadShape);
+            Debug.Log("Color: " + globalVars.gadColor);
+        }
     }
 
 }
