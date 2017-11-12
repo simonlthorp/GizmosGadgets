@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class order : MonoBehaviour {
     bool inTrigger;
-	// Use this for initialization
-	void Start () {
-		
+    int colorLevel;
+    // Use this for initialization
+    void Start () {
+        colorLevel = 1;
 	}
 
     //base increase 10
@@ -20,7 +21,7 @@ public class order : MonoBehaviour {
                 if (globalVars.carry) {
                     if(globalVars.orderShape==globalVars.gadShape && globalVars.orderColor == globalVars.gadColor) {
                         Debug.Log("SUCCESSS");
-                        globalVars.score += 10;
+                        globalVars.score += ((globalVars.level * 10) + (10 * colorLevel));
                         Destroy(globalVars.deployedGadget);
                         globalVars.carry = false;
                         globalVars.help = false;
@@ -32,6 +33,7 @@ public class order : MonoBehaviour {
                 Debug.Log("Order: Red Sphere");
                 globalVars.orderColor = "Red";
                 globalVars.orderShape = "Sphere";
+                
             }
         }
     }
