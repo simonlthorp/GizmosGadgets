@@ -17,7 +17,7 @@ public class globalVars : MonoBehaviour {
     public static string gadShape, gadColor, orderShape, orderColor;
     public static bool carry;
     public static GameObject deployedGadget;
-
+    public static int level;
     // Use this for initialization
     void Start () {
         switchFlippedA = false;
@@ -50,6 +50,7 @@ public class globalVars : MonoBehaviour {
         score = 0;
 
         carry = false;
+        level = 1;
     }
 	
 	// Update is called once per frame
