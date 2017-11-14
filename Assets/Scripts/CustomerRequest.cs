@@ -7,15 +7,18 @@ public class CustomerRequest : MonoBehaviour {
     private int colorRand = 0;
     private int objectRand = 0;
     private GameObject color;
+    private GameObject colorRequest;
+    private GameObject objectRequest;
+    private GameObject objectReq;
+    private int colorDifficulty; // can be between 1 and 6
 
 	// Use this for initialization
 	void Start () {
-
-        System.Random rand = new System.Random();
         
-        objectRand = rand.Next(0, 2);
+        colorDifficulty = 6; // difficulty determines number of colors possible
+        ChooseColor(colorDifficulty);
 
-        ChooseColor(colorRand);
+        ChooseObject();
 
 	}
 	
@@ -24,45 +27,76 @@ public class CustomerRequest : MonoBehaviour {
 		
 	}
 
-    void ChooseColor(int randomColor)
+    // Randomly chooses an object request and activates it
+    void ChooseObject()
+    {
+        System.Random rand = new System.Random();
+
+        objectRand = rand.Next(0, 3);
+
+        //Debug.Log(objectRand);
+
+        if(objectRand == 0) //Sphere
+        {
+            objectRequest = this.transform.Find("ObjectRequest").gameObject;
+            objectReq = objectRequest.transform.Find("Sphere").gameObject;
+        }
+        else if(objectRand == 1) //Cone
+        {
+            objectRequest = this.transform.Find("ObjectRequest").gameObject;
+            objectReq = objectRequest.transform.Find("Cone").gameObject;
+        }
+        else if (objectRand == 2) //Diamond
+        {
+            objectRequest = this.transform.Find("ObjectRequest").gameObject;
+            objectReq = objectRequest.transform.Find("Diamond").gameObject;
+        }
+
+        objectReq.SetActive(true);
+    }
+
+    // Randomly chooses a color request and activates it
+    void ChooseColor(int colorDificulty)
     {
 
         System.Random rand = new System.Random();
 
-        colorRand = rand.Next(0, 5);
+        colorRand = rand.Next(0, colorDificulty);
 
-        Debug.Log("Rand is " + colorRand);
+        //Debug.Log("Rand is " + colorRand);
 
-        if (randomColor == 0)
+        if (colorRand == 0)//Red
         {
-            color = GameObject.Find("Red");
-            color.SetActive(true);
+            colorRequest = this.transform.Find("ColorRequest").gameObject;
+            color = colorRequest.transform.Find("Red").gameObject;
         }
-        else if(randomColor == 1)
+        else if(colorRand == 1)//Blue
         {
-            color = GameObject.Find("Purple");
-            color.SetActive(true);
+            colorRequest = this.transform.Find("ColorRequest").gameObject;
+            color = colorRequest.transform.Find("Blue").gameObject;
         }
-        else if(randomColor == 2)
+        else if(colorRand == 2)//Yellow
         {
-            color = GameObject.Find("Orange");
-            color.SetActive(true);
+            colorRequest = this.transform.Find("ColorRequest").gameObject;
+            color = colorRequest.transform.Find("Yellow").gameObject;
         }
-        else if(randomColor == 3)
+        else if(colorRand == 3)//Green
         {
-            color = GameObject.Find("Green");
-            color.SetActive(true);
+            colorRequest = this.transform.Find("ColorRequest").gameObject;
+            color = colorRequest.transform.Find("Green").gameObject;
         }
-        else if(randomColor == 4)
+        else if(colorRand == 4)//Purple
         {
-            color = GameObject.Find("Blue");
-            color.SetActive(true);
+            colorRequest = this.transform.Find("ColorRequest").gameObject;
+            color = colorRequest.transform.Find("Purple").gameObject;
         }
-        else if(randomColor == 5)
+        else if(colorRand == 5)//Orange
         {
-            color = GameObject.Find("Yellow");
-            color.SetActive(true);
+            colorRequest = this.transform.Find("ColorRequest").gameObject;
+            color = colorRequest.transform.Find("Orange").gameObject;
         }
+
+        color.SetActive(true);
     }
 
 }
