@@ -40,16 +40,19 @@ public class CustomerRequest : MonoBehaviour {
         {
             objectRequest = this.transform.Find("ObjectRequest").gameObject;
             objectReq = objectRequest.transform.Find("Sphere").gameObject;
+            globalVars.orderShape = "Sphere";
         }
         else if(objectRand == 1) //Cone
         {
             objectRequest = this.transform.Find("ObjectRequest").gameObject;
             objectReq = objectRequest.transform.Find("Cone").gameObject;
+            globalVars.orderShape = "Cone";
         }
         else if (objectRand == 2) //Diamond
         {
             objectRequest = this.transform.Find("ObjectRequest").gameObject;
             objectReq = objectRequest.transform.Find("Diamond").gameObject;
+            globalVars.orderShape = "Diamond";
         }
 
         objectReq.SetActive(true);
@@ -69,31 +72,37 @@ public class CustomerRequest : MonoBehaviour {
         {
             colorRequest = this.transform.Find("ColorRequest").gameObject;
             color = colorRequest.transform.Find("Red").gameObject;
+            globalVars.orderColor = "Red";
         }
         else if(colorRand == 1)//Blue
         {
             colorRequest = this.transform.Find("ColorRequest").gameObject;
             color = colorRequest.transform.Find("Blue").gameObject;
+            globalVars.orderColor = "Blue";
         }
         else if(colorRand == 2)//Yellow
         {
             colorRequest = this.transform.Find("ColorRequest").gameObject;
             color = colorRequest.transform.Find("Yellow").gameObject;
+            globalVars.orderColor = "Yellow";
         }
         else if(colorRand == 3)//Green
         {
             colorRequest = this.transform.Find("ColorRequest").gameObject;
             color = colorRequest.transform.Find("Green").gameObject;
+            globalVars.orderColor = "Green";
         }
         else if(colorRand == 4)//Purple
         {
             colorRequest = this.transform.Find("ColorRequest").gameObject;
             color = colorRequest.transform.Find("Purple").gameObject;
+            globalVars.orderColor = "Purple";
         }
         else if(colorRand == 5)//Orange
         {
             colorRequest = this.transform.Find("ColorRequest").gameObject;
             color = colorRequest.transform.Find("Orange").gameObject;
+            globalVars.orderColor = "Orange";
         }
 
         color.SetActive(true);

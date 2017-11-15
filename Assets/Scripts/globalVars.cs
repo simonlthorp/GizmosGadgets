@@ -18,6 +18,7 @@ public class globalVars : MonoBehaviour {
     public static bool carry;
     public static GameObject deployedGadget;
     public static int level;
+
     // Use this for initialization
     void Start () {
         switchFlippedA = false;
