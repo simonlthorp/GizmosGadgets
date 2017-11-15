@@ -25,6 +25,8 @@ public class shapeTriangle : MonoBehaviour {
             Debug.Log("CONE");
             rendCap.enabled = false;
             rendTri.enabled = true;
+            globalVars.gadShape = "Cone";
+
         }
 
     }
