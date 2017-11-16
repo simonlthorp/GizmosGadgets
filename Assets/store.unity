@@ -3177,6 +3177,7 @@ GameObject:
   - component: {fileID: 914597469}
   - component: {fileID: 914597468}
   - component: {fileID: 914597467}
+  - component: {fileID: 914597470}
   m_Layer: 0
   m_Name: Cube (3)
   m_TagString: Untagged
@@ -3250,6 +3251,23 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 914597465}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!95 &914597470
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 914597465}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e6c3a5d3113f752439c359bef14b32eb, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &960514250
 GameObject:
   m_ObjectHideFlags: 0
@@ -4537,6 +4555,8 @@ GameObject:
   - component: {fileID: 1341125259}
   - component: {fileID: 1341125258}
   - component: {fileID: 1341125261}
+  - component: {fileID: 1341125263}
+  - component: {fileID: 1341125262}
   m_Layer: 0
   m_Name: Sphere
   m_TagString: Untagged
@@ -4621,13 +4641,38 @@ Animator:
   m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: a830af4869382334a896e7f7cea4e900, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
+  m_CullingMode: 1
+  m_UpdateMode: 1
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!111 &1341125262
+Animation:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1341125256}
+  m_Enabled: 0
+  serializedVersion: 3
+  m_Animation: {fileID: 0}
+  m_Animations: []
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 1
+  m_CullingType: 0
+--- !u!114 &1341125263
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1341125256}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43b3c337be4b49c41a46a9a649309677, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1358736289
 GameObject:
   m_ObjectHideFlags: 0
@@ -5274,6 +5319,7 @@ GameObject:
   - component: {fileID: 1733480902}
   - component: {fileID: 1733480901}
   - component: {fileID: 1733480900}
+  - component: {fileID: 1733480903}
   m_Layer: 0
   m_Name: Cube (3)
   m_TagString: Untagged
@@ -5347,6 +5393,23 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1733480898}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!95 &1733480903
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1733480898}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 794b2e10a5d6fd44688ff0e8bb05c380, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &1766784741
 GameObject:
   m_ObjectHideFlags: 0
@@ -6093,6 +6156,7 @@ GameObject:
   - component: {fileID: 1819813869}
   - component: {fileID: 1819813868}
   - component: {fileID: 1819813867}
+  - component: {fileID: 1819813870}
   m_Layer: 0
   m_Name: Cube (3)
   m_TagString: Untagged
@@ -6166,6 +6230,23 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1819813865}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!95 &1819813870
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1819813865}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5f8a667059730ba4990e2b6ffa279081, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &1856502372
 GameObject:
   m_ObjectHideFlags: 0
@@ -6666,6 +6747,7 @@ GameObject:
   - component: {fileID: 1965457465}
   - component: {fileID: 1965457464}
   - component: {fileID: 1965457463}
+  - component: {fileID: 1965457466}
   m_Layer: 0
   m_Name: Cube (3)
   m_TagString: Untagged
@@ -6739,6 +6821,23 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1965457461}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!95 &1965457466
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1965457461}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7362451390e60ce4596827384e8efa4c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1001 &1985018449
 Prefab:
   m_ObjectHideFlags: 0
