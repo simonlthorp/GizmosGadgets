@@ -13,6 +13,7 @@ public class bootAnimation : MonoBehaviour {
 	void Update () {
         if (Input.GetKeyDown(KeyCode.Z))
         {
+            Debug.Log("Animation");
             ani.SetBool("bootAnimation", false);
             
         }
