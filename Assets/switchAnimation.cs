@@ -9,13 +9,19 @@ public class switchAnimation : MonoBehaviour {
     // Use this for initialization
     void Start () {
         anim = GetComponent<Animator>();
+       
     }
-	
-	// Update is called once per frame
-	void Update () {
+    public void DoSomething()
+    {
+
+
+    }
+
+    // Update is called once per frame
+    void Update () {
         if (Input.GetKeyDown(KeyCode.E) && inTrigger)
         {
-
+            
             anim.Play("SwitchAnimation");
         }
         //if (Input.GetKeyDown(KeyCode.E)) //&& inTrigger)
