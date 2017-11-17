@@ -1,0 +1,23 @@
+Gizmo’s Task List
+
+Tasks:
+Customer movement - Johnny
+Customer requests – Simon - done
+	request sprites
+sound effects - Jade
+sound track - Jade
+boot code / animation - Jade
+cone and diamond shapes - Simon - Done
+models - Simon
+	shape presses
+	color presses
+	boot
+	object dropper
+switch animations
+link menus - Jessica
+scoring - Jessica - Done
+	assign money (points) for serving customer
+track high scores
+code health loss for mistakes - Matthew
+	add health to UI
+Add toon shaders
