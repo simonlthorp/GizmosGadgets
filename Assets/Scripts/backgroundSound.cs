@@ -17,12 +17,12 @@ public class backgroundSound : MonoBehaviour {
 
         if (audioSource.isPlaying)
         {
-            //if (Input.GetAxisRaw("Soundpause") !=0 )
-            //{
-            //    audioSource.Pause();
+            if (Input.GetAxisRaw("Soundpause") != 0)
+            {
+                audioSource.Pause();
 
-            //}
-            if (Input.GetKeyDown(KeyCode.Q))
+            }
+            else if (Input.GetKeyDown(KeyCode.Q))
             {
                 audioSource.Pause();
 
@@ -30,11 +30,11 @@ public class backgroundSound : MonoBehaviour {
         }
         else if (!audioSource.isPlaying)
         {
-            //if (Input.GetAxis("Soundpause") != 0)
-            //{
-            //    audioSource.Play();
-            //}
-            if (Input.GetKeyDown(KeyCode.Q))
+            if (Input.GetAxis("Soundpause") != 0)
+            {
+                audioSource.Play();
+            }
+            else if (Input.GetKeyDown(KeyCode.Q))
             {
                 audioSource.Play();
             }
