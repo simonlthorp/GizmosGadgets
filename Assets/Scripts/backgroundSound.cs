@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class backgroundSound : MonoBehaviour {
+
     AudioSource audioSource;
     // Use this for initialization
     void Start () {
@@ -16,7 +17,12 @@ public class backgroundSound : MonoBehaviour {
 
         if (audioSource.isPlaying)
         {
-            if (Input.GetAxisRaw("Pause") !=0 )
+            //if (Input.GetAxisRaw("Soundpause") !=0 )
+            //{
+            //    audioSource.Pause();
+
+            //}
+            if (Input.GetKeyDown(KeyCode.Q))
             {
                 audioSource.Pause();
 
@@ -24,7 +30,11 @@ public class backgroundSound : MonoBehaviour {
         }
         else if (!audioSource.isPlaying)
         {
-            if (Input.GetAxis("Pause") != 0)
+            //if (Input.GetAxis("Soundpause") != 0)
+            //{
+            //    audioSource.Play();
+            //}
+            if (Input.GetKeyDown(KeyCode.Q))
             {
                 audioSource.Play();
             }
