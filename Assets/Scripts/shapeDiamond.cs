@@ -25,6 +25,8 @@ public class shapeDiamond : MonoBehaviour {
             Debug.Log("CONE");
             rendCap.enabled = false;
             rendDia.enabled = true;
+            globalVars.gadShape = "Diamond";
+
         }
 
     }

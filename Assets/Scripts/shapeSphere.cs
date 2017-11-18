@@ -24,6 +24,7 @@ public class shapeSphere : MonoBehaviour {
             Debug.Log("SPHERE");
             rendCap.enabled = false;
             rendSph.enabled = true;
+            globalVars.gadShape = "Sphere";
         }
 
 	}

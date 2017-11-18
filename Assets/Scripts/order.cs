@@ -30,9 +30,6 @@ public class order : MonoBehaviour {
 
                     }
                 }
-                Debug.Log("Order: Red Sphere");
-                globalVars.orderColor = "Red";
-                globalVars.orderShape = "Sphere";
                 
             }
         }
