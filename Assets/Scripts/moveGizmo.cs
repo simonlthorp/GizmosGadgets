@@ -2,12 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class moveGizmo : MonoBehaviour {
     private Rigidbody rb;
     GameObject obj;
     bool faceMachine;
     int turn = 1;
     bool objGet;
+
+    float moveVertical;
+    float moveHorizontal;
 
     // Use this for initialization
     void Start () {
@@ -22,20 +26,22 @@ public class moveGizmo : MonoBehaviour {
         clampedPositionA.x = Mathf.Clamp(transform.position.x, -4, 4);
         transform.position = clampedPositionA;
 
-        float moveVertical = Input.GetAxis("Vertical");
+        moveVertical = Input.GetAxis("Vertical");
+        moveHorizontal = Input.GetAxis("Horizontal");
 
-
-        if (moveVertical<0) {
+        if (moveVertical < 0) {
             transform.rotation = Quaternion.Euler(0,180,0);
             turn = -1;
+            Debug.Log("HOT");
         }
-        else if (moveVertical>0) {
+        else if (moveVertical > 0) {
             transform.rotation = Quaternion.Euler(0, 0, 0);
             turn = 1;
+            Debug.Log("COLD");
         }
-        float moveHorizontal = Input.GetAxis("Horizontal");
 
-        Vector3 movement = new Vector3((turn*moveHorizontal), 0.0f, 0.0f);
+
+        Vector3 movement = new Vector3((moveHorizontal)*(turn), 0.0f, 0.0f);
 
         if (globalVars.carry) {
 
