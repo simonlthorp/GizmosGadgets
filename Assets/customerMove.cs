@@ -5,7 +5,7 @@ using UnityEngine.AI;
 
 public class customerMove : MonoBehaviour
 {
-
+    public float timeLeft;
     public Transform target3;
     public Transform target2;
     public Transform target;
@@ -17,7 +17,7 @@ public class customerMove : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-
+        timeLeft = 2;
         agent = GetComponent<NavMeshAgent>();
         chooseSpace();
     }
@@ -27,6 +27,20 @@ public class customerMove : MonoBehaviour
     {
 
         agent.SetDestination(gohere.position);
+
+
+        timeLeft -= Time.deltaTime;
+        if (timeLeft <= 0)
+        {
+            angry = true;
+
+            if (angry == true)
+            {
+
+                gohere = exit;
+
+            }
+        }
 
         /*  for ( time = 0; time <= 5;)
           {
@@ -71,7 +85,9 @@ public class customerMove : MonoBehaviour
             gohere = target3;
         }
 
-        
+
+       
+
 
 
     }
