@@ -19,7 +19,7 @@ public class customerMove : MonoBehaviour
     void Start()
     {
         cbody = GetComponent<Rigidbody>();
-        timeLeft = 8;
+        timeLeft = 30;
         agent = GetComponent<NavMeshAgent>();
         agent.updateRotation = false;
         
