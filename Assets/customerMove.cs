@@ -14,11 +14,15 @@ public class customerMove : MonoBehaviour
     NavMeshAgent agent;
     public Transform gohere;
     public int time;
+    Rigidbody cbody;
     // Use this for initialization
     void Start()
     {
+        cbody = GetComponent<Rigidbody>();
         timeLeft = 2;
         agent = GetComponent<NavMeshAgent>();
+        agent.updateRotation = false;
+        
         chooseSpace();
     }
 
@@ -42,25 +46,6 @@ public class customerMove : MonoBehaviour
             }
         }
 
-        /*  for ( time = 0; time <= 5;)
-          {
-              Debug.Log("time is at: "+ time);
-              if (time == 5)
-              {
-
-                  angry = true;
-
-              }
-
-
-              if (angry == true)
-              {
-
-                  agent.SetDestination(exit.position);
-              }
-
-          }
-          time++; */
     }
 
     void chooseSpace()
