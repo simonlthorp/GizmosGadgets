@@ -26,6 +26,8 @@ public class globalVars : MonoBehaviour {
         switchFlippedC = false;
         switchFlippedD = false;
 
+        gadShape = null;
+
         Red = false;
         Orange = false;
         Yellow = false;

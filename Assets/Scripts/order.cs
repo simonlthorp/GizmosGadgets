@@ -29,6 +29,14 @@ public class order : MonoBehaviour {
                         globalVars.acivate(false);
 
                     }
+                    else {
+                        Debug.Log("Boo");
+                        Destroy(globalVars.deployedGadget);
+                        globalVars.carry = false;
+                        globalVars.help = false;
+                        globalVars.movement = false;
+                        globalVars.acivate(false);
+                    }
                 }
                 
             }

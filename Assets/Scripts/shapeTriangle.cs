@@ -22,10 +22,13 @@ public class shapeTriangle : MonoBehaviour {
     void Update() {
 
         if (active) {
-            Debug.Log("CONE");
-            rendCap.enabled = false;
-            rendTri.enabled = true;
-            globalVars.gadShape = "Cone";
+            if (globalVars.gadShape == null) {
+                Debug.Log("CONE");
+                rendCap.enabled = false;
+                rendTri.enabled = true;
+                globalVars.gadShape = "Cone";
+
+            }
 
         }
 

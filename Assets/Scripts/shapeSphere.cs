@@ -21,10 +21,13 @@ public class shapeSphere : MonoBehaviour {
     void Update () {
 
         if (active) {
-            Debug.Log("SPHERE");
-            rendCap.enabled = false;
-            rendSph.enabled = true;
-            globalVars.gadShape = "Sphere";
+            if (globalVars.gadShape == null) {
+                Debug.Log("SPHERE");
+                rendCap.enabled = false;
+                rendSph.enabled = true;
+                globalVars.gadShape = "Sphere";
+
+            }
         }
 
 	}

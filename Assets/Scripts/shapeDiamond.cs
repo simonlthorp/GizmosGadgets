@@ -22,10 +22,12 @@ public class shapeDiamond : MonoBehaviour {
     void Update() {
 
         if (active) {
-            Debug.Log("CONE");
-            rendCap.enabled = false;
-            rendDia.enabled = true;
-            globalVars.gadShape = "Diamond";
+            if (globalVars.gadShape == null) {
+                rendCap.enabled = false;
+                rendDia.enabled = true;
+                globalVars.gadShape = "Diamond";
+
+            }
 
         }
 
