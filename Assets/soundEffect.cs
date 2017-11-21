@@ -13,7 +13,12 @@ public class soundEffect : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (Input.GetAxisRaw("Fire1") != 0 && inTrigger)
+        if (Input.GetKeyDown("e") && inTrigger)
+        {
+            audioSource.Play();
+
+        }
+        else if (Input.GetKeyDown("joystick button 2") && inTrigger)
         {
             audioSource.Play();
 
