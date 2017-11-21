@@ -6297,8 +6297,8 @@ GameObject:
   - component: {fileID: 1796742318}
   - component: {fileID: 1796742322}
   - component: {fileID: 1796742324}
-  - component: {fileID: 1796742323}
   - component: {fileID: 1796742325}
+  - component: {fileID: 1796742323}
   m_Layer: 0
   m_Name: DropSwitch
   m_TagString: Untagged

@@ -17,27 +17,20 @@ public class backgroundSound : MonoBehaviour {
 
         if (audioSource.isPlaying)
         {
-            if (Input.GetAxisRaw("Soundpause") != 0)
+            if (Input.GetKeyDown("joystick button 7") || Input.GetKeyDown("q"))
             {
                 audioSource.Pause();
 
             }
-            else if (Input.GetKeyDown(KeyCode.Q))
-            {
-                audioSource.Pause();
-
-            }
+           
         }
         else if (!audioSource.isPlaying)
         {
-            if (Input.GetAxis("Soundpause") != 0)
+            if (Input.GetKeyDown("joystick button 7") || Input.GetKeyDown("q"))
             {
                 audioSource.Play();
             }
-            else if (Input.GetKeyDown(KeyCode.Q))
-            {
-                audioSource.Play();
-            }
+           
         }
     }
 }
