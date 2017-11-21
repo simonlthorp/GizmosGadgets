@@ -5,9 +5,16 @@ using UnityEngine;
 public class order : MonoBehaviour {
     bool inTrigger;
     int colorLevel;
+
+    public static int MAX_HP = 5;
+    public static int PlayerHp = MAX_HP; //reference for HP
+    //public GameObject[] HP = new GameObject[5]; // reference for HP objects
+
+
     // Use this for initialization
     void Start () {
         colorLevel = 1;
+        Debug.Log("Start HP: " + PlayerHp);
 	}
 
     //base increase 10
@@ -30,18 +37,30 @@ public class order : MonoBehaviour {
 
                     }
                     else {
+                        Debug.Log("current hp: " + PlayerHp);
+                        if (PlayerHp > 0)
+                        {
+                            PlayerHp -= 1; // damages!!
+                            //HP[PlayerHp-1].SetActive(true);
+                            Debug.Log("*" + PlayerHp);
+                        }
+                        
+
                         Debug.Log("Boo");
                         Destroy(globalVars.deployedGadget);
                         globalVars.carry = false;
                         globalVars.help = false;
                         globalVars.movement = false;
                         globalVars.acivate(false);
+                       
                     }
                 }
                 
             }
         }
     }
+
+    
 
     void OnTriggerEnter(Collider other) {
         if (other.gameObject.name == "torso") {
