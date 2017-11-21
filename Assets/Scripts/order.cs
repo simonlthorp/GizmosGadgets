@@ -27,6 +27,7 @@ public class order : MonoBehaviour {
                         globalVars.help = false;
                         globalVars.movement = false;
                         globalVars.acivate(false);
+                        globalVars.gadShape = null;
 
                     }
                     else {
@@ -36,6 +37,8 @@ public class order : MonoBehaviour {
                         globalVars.help = false;
                         globalVars.movement = false;
                         globalVars.acivate(false);
+                        globalVars.gadShape = null;
+
                     }
                 }
                 

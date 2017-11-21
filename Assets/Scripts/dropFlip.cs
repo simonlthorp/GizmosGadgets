@@ -27,12 +27,12 @@ public class dropFlip : MonoBehaviour {
 
                 if (globalVars.help) {
                     globalVars.acivate(true);
-                    //shape1.GetComponent<shapeSphere>().enabled = true;
-                    //shape2.GetComponent<shapeTriangle>().enabled = true;
-                    //shape3.GetComponent<shapeDiamond>().enabled = true;
-                    //colRed.GetComponent<colorREd>().enabled = true;
-                    //colBlu.GetComponent<colorBlue>().enabled = true;
-                    //colYel.GetComponent<colorYellow>().enabled = true;
+                    shape1.GetComponent<shapeSphere>().enabled = true;
+                    shape2.GetComponent<shapeTriangle>().enabled = true;
+                    shape3.GetComponent<shapeDiamond>().enabled = true;
+                    colRed.GetComponent<colorREd>().enabled = true;
+                    colBlu.GetComponent<colorBlue>().enabled = true;
+                    colYel.GetComponent<colorYellow>().enabled = true;
                     axisInUse = true;
 
                 }
