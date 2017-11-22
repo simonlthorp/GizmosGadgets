@@ -14,7 +14,7 @@ public class CustomerRequest : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        
+
         colorDifficulty = 6; // difficulty determines number of colors possible
         ChooseColor(colorDifficulty);
 
@@ -27,8 +27,14 @@ public class CustomerRequest : MonoBehaviour {
 		
 	}
 
+    public void ClearRequest()
+    {
+        objectReq.SetActive(false);
+        color.SetActive(false);
+    }
+
     // Randomly chooses an object request and activates it
-    void ChooseObject()
+    public void ChooseObject()
     {
         System.Random rand = new System.Random();
 
@@ -59,7 +65,7 @@ public class CustomerRequest : MonoBehaviour {
     }
 
     // Randomly chooses a color request and activates it
-    void ChooseColor(int colorDificulty)
+    public void ChooseColor(int colorDificulty)
     {
 
         System.Random rand = new System.Random();
