@@ -51,7 +51,7 @@ public class moveGadget : MonoBehaviour {
             Vector3 C = new Vector3(4, 1.45f, -0.5f);
             Vector3 D = new Vector3(4, 1.45f, 1.5f);
 
-            step = Time.deltaTime;
+            step = Time.deltaTime*3;
 
             if (start) {
                 orderGadget.transform.position = Vector3.MoveTowards(orderGadget.transform.position, A, step);
