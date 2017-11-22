@@ -8,6 +8,7 @@ public class order : MonoBehaviour {
 
     public static int MAX_HP = 5;
     public static int PlayerHp = MAX_HP; //reference for HP
+    public static bool orderReceived = false;
 
     // Use this for initialization
     void Start () {
@@ -51,6 +52,9 @@ public class order : MonoBehaviour {
                         globalVars.gadShape = null;
 
                     }
+
+                    orderReceived = true;
+
                 }
                 
             }
