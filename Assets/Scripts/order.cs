@@ -5,6 +5,10 @@ using UnityEngine;
 public class order : MonoBehaviour {
     bool inTrigger;
     int colorLevel;
+
+    public static int MAX_HP = 5;
+    public static int PlayerHp = MAX_HP; //reference for HP
+
     // Use this for initialization
     void Start () {
         colorLevel = 1;
@@ -31,6 +35,13 @@ public class order : MonoBehaviour {
 
                     }
                     else {
+
+                        if (PlayerHp > 0)
+                        {
+                            PlayerHp -= 1; // damages!!
+                            Debug.Log("*" + PlayerHp);
+                        }
+
                         Debug.Log("Boo");
                         Destroy(globalVars.deployedGadget);
                         globalVars.carry = false;
