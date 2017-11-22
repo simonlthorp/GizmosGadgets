@@ -6,6 +6,7 @@ TagManager:
   tags:
   - switch
   - Gadget
+  - 1Gadget
   layers:
   - Default
   - TransparentFX
