@@ -33,11 +33,10 @@ public class customerMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //  while (reset == true)
-        //  {
+
         if (reset == true)
         {
-            timeLeft = 45;
+            timeLeft = 20;
             angry = false;
             chooseSpace();
             agent.SetDestination(gohere.position);
@@ -95,11 +94,6 @@ public class customerMove : MonoBehaviour
 
             gohere = target3;
         }
-
-
-
-
-
 
     }
 }
