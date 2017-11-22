@@ -13,6 +13,7 @@ public class customerMove : MonoBehaviour
     public Transform exit;
     NavMeshAgent agent;
     public Transform gohere;
+    public GameObject request;
 
     Rigidbody cbody;
     bool reset = true;
@@ -25,6 +26,7 @@ public class customerMove : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         agent.updateRotation = false;
 
+        request = GameObject.Find("CustomerRequest");
 
     }
 
@@ -43,11 +45,11 @@ public class customerMove : MonoBehaviour
         }
 
         timeLeft -= Time.deltaTime;
-        if (timeLeft <= 0)
+        if (timeLeft <= 0 || order.orderReceived)
         {
             angry = true;
 
-            if (angry == true || order.orderReceived)
+            if (angry == true)
             {
 
                 gohere = exit;
@@ -60,6 +62,12 @@ public class customerMove : MonoBehaviour
                     reset = true;
                     angry = false;
                     order.orderReceived = false;
+
+                    request.GetComponent<CustomerRequest>().ClearRequest();
+                    request.GetComponent<CustomerRequest>().ChooseObject();
+                    request.GetComponent<CustomerRequest>().ChooseColor(6);
+
+                    
                 }
             }
         }
