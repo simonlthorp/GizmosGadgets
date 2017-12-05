@@ -19,15 +19,14 @@ public class bootOut : MonoBehaviour {
 	}
 
     void OnTriggerStay(Collider other) {
-        Debug.Log("POTATO");
         if (globalVars.switchFlippedD) {
-            Debug.Log("ABCEFGHIJKLMNOPQRSTUVWXYZ");
+            Debug.Log("Switch Flipped D = " + globalVars.switchFlippedD.ToString());
             Destroy(other.gameObject);
             globalVars.help = false;
             globalVars.movement = false;
             globalVars.acivate(false);
             globalVars.gadShape = null;
-
+            globalVars.switchFlippedD = false;
         }
     }
 }

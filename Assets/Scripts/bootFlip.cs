@@ -13,11 +13,9 @@ public class bootFlip : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
-        if (Input.GetAxis("Fire1") != 0 && inTrigger) {
-            if (Input.GetAxisRaw("Fire1") != 0) {
-                Debug.Log("Activate Boot");
-                globalVars.switchFlippedD = true;
-            }
+        if (Input.GetButtonDown("Fire1") && inTrigger) {
+            Debug.Log("Activate Boot");
+            globalVars.switchFlippedD = true;
         }
     }
 

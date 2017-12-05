@@ -22,7 +22,6 @@ public class shapeSphere : MonoBehaviour {
 
         if (active) {
             if (globalVars.gadShape == null) {
-                Debug.Log("SPHERE");
                 rendCap.enabled = false;
                 rendSph.enabled = true;
                 globalVars.gadShape = "Sphere";
@@ -38,14 +37,12 @@ public class shapeSphere : MonoBehaviour {
             if (globalVars.switchFlippedB) {
                 active = true;
                 globalVars.switchFlippedB = false;
-                Debug.Log("Falsed + S");
             }
 
         }
     }
 
     void OnTriggerExit(Collider other) {
-        Debug.Log("S");
         under = false;
         active = false;
     }
