@@ -12,12 +12,8 @@ public class shapeFlip : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
-        Debug.Log("switchFlippedB: " + globalVars.switchFlippedB);
-        if (Input.GetAxis("Fire1") != 0 && inTrigger) {
-            if (Input.GetAxisRaw("Fire1") != 0) {
-                Debug.Log("Switch B Flipped");
-                globalVars.switchFlippedB = true;
-            }
+        if (Input.GetButtonDown("Fire1") && inTrigger) {
+            globalVars.switchFlippedB = true;
         }
     }
 
