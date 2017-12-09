@@ -10,14 +10,17 @@ public class customerMove : MonoBehaviour
     public Transform target2;
     public Transform target;
     public bool angry = false;
+    public bool happy = false;
     public Transform exit;
     NavMeshAgent agent;
     public Transform gohere;
     public GameObject request;
-
+    public float level = 0;
+    public int levelreq = 10;
     Rigidbody cbody;
     bool reset = true;
     public float resetter = 7;
+    public moveGadget editspeed;
     // Use this for initialization
     void Start()
     {
@@ -33,18 +36,25 @@ public class customerMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (levelreq == 0) {
+            level++;
+            editspeed.step = Time.deltaTime * (3 + level);
+            levelreq = 10;
+            agent.speed = 3.5f + level;
+        }
 
         if (reset == true)
         {
-            timeLeft = 20;
+            timeLeft = 20 - level;
             angry = false;
+            happy = false;
             chooseSpace();
             agent.SetDestination(gohere.position);
             reset = false;
         }
 
         timeLeft -= Time.deltaTime;
-        if (timeLeft <= 0 || order.orderReceived)
+        if (timeLeft <= 0)
         {
             angry = true;
 
@@ -67,6 +77,33 @@ public class customerMove : MonoBehaviour
                     request.GetComponent<CustomerRequest>().ChooseColor(6);
 
                     
+                }
+            }
+
+            if (order.orderReceived) {
+
+                happy = true;
+                if (happy == true) {
+
+                    gohere = exit;
+                    agent.SetDestination(gohere.position);
+
+                    resetter -= Time.deltaTime;
+                    if (resetter <= 0)
+                    {
+                        resetter = 5;
+                        reset = true;
+                        happy = false;
+                        order.orderReceived = false;
+
+                        request.GetComponent<CustomerRequest>().ClearRequest();
+                        request.GetComponent<CustomerRequest>().ChooseObject();
+                        request.GetComponent<CustomerRequest>().ChooseColor(6);
+
+                        levelreq--;
+                    }
+
+
                 }
             }
         }
@@ -93,6 +130,7 @@ public class customerMove : MonoBehaviour
         {
 
             gohere = target3;
+            Debug.Log("i is 2");
         }
 
     }
