@@ -566,7 +566,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400000, guid: 8c0f8b23caf4d6843ae9d672d90409e0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.21
+      value: -0.5
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 8c0f8b23caf4d6843ae9d672d90409e0, type: 3}
       propertyPath: m_LocalPosition.y
@@ -3485,7 +3485,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400000, guid: 8c0f8b23caf4d6843ae9d672d90409e0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.512
+      value: -3.09
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 8c0f8b23caf4d6843ae9d672d90409e0, type: 3}
       propertyPath: m_LocalPosition.y
@@ -5785,10 +5785,14 @@ MonoBehaviour:
   target2: {fileID: 268952642}
   target: {fileID: 1915862694}
   angry: 0
+  happy: 0
   exit: {fileID: 1936009063}
   gohere: {fileID: 0}
   request: {fileID: 0}
+  level: 0
+  levelreq: 10
   resetter: 7
+  editspeed: {fileID: 0}
 --- !u!195 &1388786218
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -6941,6 +6945,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 107441281b3442445b52d76e1ab0c044, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  step: 0
   Gadget: {fileID: 1799275917}
 --- !u!65 &1799275920
 BoxCollider:
@@ -7248,7 +7253,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:

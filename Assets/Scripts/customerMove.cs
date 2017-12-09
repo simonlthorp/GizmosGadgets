@@ -38,7 +38,7 @@ public class customerMove : MonoBehaviour
     {
         if (levelreq == 0) {
             level++;
-            editspeed.step = Time.deltaTime * (3 + level);
+            //editspeed.step = Time.deltaTime * (3 + level);
             levelreq = 10;
             agent.speed = 3.5f + level;
         }

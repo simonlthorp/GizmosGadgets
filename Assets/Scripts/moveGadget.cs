@@ -12,14 +12,23 @@ public class moveGadget : MonoBehaviour {
     GameObject orderGadget;
     int hi = 0;
     int copyNum = 0;
+
+    private customerMove cm;
+    private int level;
+
     // Use this for initialization
     void Start () {
-		
+
+        cm = GameObject.Find("CustomerHead").GetComponent<customerMove>();
+
 	}
 	
 	// Update is called once per frame
     
 	void Update () {
+
+        level = (int)cm.level;
+
             if (globalVars.switchFlippedA) {
             A1 = false;
             B1 = false;
@@ -50,8 +59,8 @@ public class moveGadget : MonoBehaviour {
             Vector3 B = new Vector3(-4, 1.45f, -0.5f);
             Vector3 C = new Vector3(4, 1.45f, -0.5f);
             Vector3 D = new Vector3(4, 1.45f, 1.5f);
-
-            step = Time.deltaTime*2;
+            Debug.Log("level: " + level);
+            step = Time.deltaTime*(2+level);
 
             if (start) {
                 orderGadget.transform.position = Vector3.MoveTowards(orderGadget.transform.position, A, step);
