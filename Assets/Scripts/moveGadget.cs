@@ -6,7 +6,6 @@ public class moveGadget : MonoBehaviour {
 
     bool A1, B1, C1;
     bool start;
-    bool meow=false;
     public float step;
     public GameObject Gadget;
     GameObject orderGadget;

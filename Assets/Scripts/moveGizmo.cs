@@ -24,7 +24,7 @@ public class moveGizmo : MonoBehaviour {
         transform.position = clampedPositionA;
 
         moveVertical = Input.GetAxis("Vertical");
-        moveHorizontal = Input.GetAxis("Horizontal");
+        moveHorizontal = -Input.GetAxis("Horizontal");
 
         if (moveVertical < 0) {
             transform.rotation = Quaternion.Euler(0,180,0);
