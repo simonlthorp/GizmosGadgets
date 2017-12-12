@@ -10,9 +10,12 @@ public class order : MonoBehaviour {
     public static int PlayerHp = MAX_HP; //reference for HP
     public static bool orderReceived = false;
 
+    public bool timeout;
+
     // Use this for initialization
     void Start () {
         colorLevel = 1;
+        timeout = false;
 	}
 
     //base increase 10
