@@ -6,6 +6,9 @@ public class order : MonoBehaviour {
     bool inTrigger;
     int colorLevel;
 
+    public bool timeout;
+    public customerMove cm;
+    private float time;
     public static int MAX_HP = 5;
     public static int PlayerHp = MAX_HP; //reference for HP
     public static bool orderReceived = false;
@@ -13,7 +16,9 @@ public class order : MonoBehaviour {
     // Use this for initialization
     void Start () {
         colorLevel = 1;
-	}
+        cm = GetComponent<customerMove>();
+        timeout = false;
+    }
 
     //base increase 10
     //additional 10 for secondary colours
@@ -21,6 +26,7 @@ public class order : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
+        time = (float)cm.timeLeft;
         if (Input.GetAxis("Fire1") != 0 && inTrigger) {
             if (Input.GetAxisRaw("Fire1") != 0) {
                 if (globalVars.carry) {
@@ -70,7 +76,13 @@ public class order : MonoBehaviour {
                 }
                 
             }
+
+            
+
+
         }
+       
+
     }
 
     void OnTriggerEnter(Collider other) {
@@ -83,5 +95,14 @@ public class order : MonoBehaviour {
         if (other.gameObject.name == "torso") {
             inTrigger = false;
         }
+    }
+
+    public void loseHealth() {
+        
+        
+            PlayerHp -= 1; // damages!!
+            Debug.Log("*" + PlayerHp);
+        timeout = false;
+
     }
 }

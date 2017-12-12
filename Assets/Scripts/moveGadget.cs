@@ -14,7 +14,7 @@ public class moveGadget : MonoBehaviour {
     int copyNum = 0;
 
     private customerMove cm;
-    private int level;
+    private int currentLevel;
 
     // Use this for initialization
     void Start () {
@@ -27,7 +27,8 @@ public class moveGadget : MonoBehaviour {
     
 	void Update () {
 
-        level = (int)cm.level;
+        //By: Johnny Kang, grabs the level variable from the customerMove.cs and stores it into currentlevel variable of this script file
+        currentLevel = (int)cm.level;
 
             if (globalVars.switchFlippedA) {
             A1 = false;
@@ -59,8 +60,10 @@ public class moveGadget : MonoBehaviour {
             Vector3 B = new Vector3(-4, 1.45f, -0.5f);
             Vector3 C = new Vector3(4, 1.45f, -0.5f);
             Vector3 D = new Vector3(4, 1.45f, 1.5f);
-            Debug.Log("level: " + level);
-            step = Time.deltaTime*(2+level);
+            Debug.Log("level: " + currentLevel);
+
+            //By Johnny Kang: grabs the currentlevel variable and adds to the speed of the conveyor belt varying on the current level
+            step = Time.deltaTime*(2+currentLevel/2);
 
             if (start) {
                 orderGadget.transform.position = Vector3.MoveTowards(orderGadget.transform.position, A, step);

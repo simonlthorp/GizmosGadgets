@@ -5,12 +5,16 @@ using UnityEngine.AI;
 
 public class customerMove : MonoBehaviour
 {
+
+
     public float timeLeft;
     public Transform target3;
     public Transform target2;
     public Transform target;
+    public bool go = true;
     public bool angry = false;
     public bool happy = false;
+
     public Transform exit;
     NavMeshAgent agent;
     public Transform gohere;
@@ -21,23 +25,25 @@ public class customerMove : MonoBehaviour
     bool reset = true;
     public float resetter;
     public moveGadget editspeed;
+    public order od;
     // Use this for initialization
     void Start()
     {
         cbody = GetComponent<Rigidbody>();
-        timeLeft = 5;
         agent = GetComponent<NavMeshAgent>();
         agent.updateRotation = false;
         level = 0;
-        resetter = 2;
+        resetter = 3;
         request = GameObject.Find("CustomerRequest");
+        od = GetComponent<order>();
         levelreq = 1;
+      //  go = true;
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        od.timeout = true;
         //if the player reaches the level threshold it advances a level
         if (levelreq == 0) {
             increaseLevel();
@@ -46,7 +52,7 @@ public class customerMove : MonoBehaviour
         //resets the customer movemenet upon reaching the exit position
         if (reset == true)
         {
-            timeLeft = 5- level;
+            timeLeft = 30 -(2 + level);
             angry = false;
             happy = false;
             chooseSpace();
@@ -56,23 +62,26 @@ public class customerMove : MonoBehaviour
 
         if (reset == false)
         {
-            timeLeft -= Time.deltaTime;
+          
+                timeLeft -= Time.deltaTime;
+           
         }
         //if timer is 
         if (timeLeft <= 0)
         {
             angry = true;
-
+           
             if (angry == true)
             {
                 Debug.Log("Customer is pissed");
                 gohere = exit;
                 agent.SetDestination(gohere.position);
-
+               
                 resetter -= Time.deltaTime;
                 if (resetter <= 0)
                 {
-                    resetter = 5;
+                    od.loseHealth();
+                    resetter = 3;
                     reset = true;
                     angry = false;
                     order.orderReceived = false;
@@ -80,7 +89,7 @@ public class customerMove : MonoBehaviour
                     request.GetComponent<CustomerRequest>().ClearRequest();
                     request.GetComponent<CustomerRequest>().ChooseObject();
                     request.GetComponent<CustomerRequest>().ChooseColor(6);
-
+                    
                     
                 }
             }
@@ -101,7 +110,7 @@ public class customerMove : MonoBehaviour
                 resetter -= Time.deltaTime;
                 if (resetter <= 0)
                 {
-                    resetter = 5;
+                    resetter = 3;
                     reset = true;
                     happy = false;
                     order.orderReceived = false;
