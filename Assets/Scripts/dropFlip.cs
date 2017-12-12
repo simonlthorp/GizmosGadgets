@@ -20,33 +20,21 @@ public class dropFlip : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
+        if (Input.GetButton("Fire1") && inTrigger) {
+            if (globalVars.GadgetInactive) {
+                globalVars.acivate(true);
 
-        if (Input.GetAxisRaw("Fire1") != 0 && inTrigger) {
-            if (axisInUse == false) {
+                shape1.GetComponent<shapeSphere>().enabled = true;
+                shape2.GetComponent<shapeTriangle>().enabled = true;
+                shape3.GetComponent<shapeDiamond>().enabled = true;
+                colRed.GetComponent<colorREd>().enabled = true;
+                colBlu.GetComponent<colorBlue>().enabled = true;
+                colYel.GetComponent<colorYellow>().enabled = true;
 
-
-                if (globalVars.help) {
-                    globalVars.acivate(true);
-                    shape1.GetComponent<shapeSphere>().enabled = true;
-                    shape2.GetComponent<shapeTriangle>().enabled = true;
-                    shape3.GetComponent<shapeDiamond>().enabled = true;
-                    colRed.GetComponent<colorREd>().enabled = true;
-                    colBlu.GetComponent<colorBlue>().enabled = true;
-                    colYel.GetComponent<colorYellow>().enabled = true;
-                    axisInUse = true;
-
-                }
-                else {
-                    globalVars.switchFlippedA = true;
-                }
-
-
+                globalVars.switchFlippedA = true;
+                globalVars.GadgetInactive = false;
             }
 
- //               Debug.Log("Activate Drop");
-        }
-        if (Input.GetAxisRaw("Fire1") == 0) {
-            axisInUse = false;
         }
 
         //if (Input.GetAxis("Fire1") == 0 && inTrigger) {

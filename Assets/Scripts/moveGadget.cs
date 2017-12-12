@@ -6,12 +6,9 @@ public class moveGadget : MonoBehaviour {
 
     bool A1, B1, C1;
     bool start;
-    bool meow=false;
     float step;
     public GameObject Gadget;
     GameObject orderGadget;
-    int hi = 0;
-    int copyNum = 0;
     // Use this for initialization
     void Start () {
 		
@@ -20,21 +17,20 @@ public class moveGadget : MonoBehaviour {
 	// Update is called once per frame
     
 	void Update () {
-            if (globalVars.switchFlippedA) {
+        if (globalVars.switchFlippedA) {
             A1 = false;
             B1 = false;
             C1 = false;
-            orderGadget = (GameObject)Instantiate(Gadget, new Vector3(4, 1.5f, -3), Gadget.transform.rotation);
-                orderGadget.tag = "1Gadget";
-                copyNum++;
-            //                string name = string.Concat("orderGadget",copyNum);
-            globalVars.gadName = string.Concat("orderGadget", copyNum);
-                orderGadget.name = globalVars.gadName;
-                meow = true;
+            //orderGadget = (GameObject)Instantiate(Gadget, new Vector3(4, 1.5f, -3), Gadget.transform.rotation);
+            //    orderGadget.tag = "1Gadget";
+            //    copyNum++;
+            ////                string name = string.Concat("orderGadget",copyNum);
+            //globalVars.gadName = string.Concat("orderGadget", copyNum);
+            //    orderGadget.name = globalVars.gadName;
+            Gadget.transform.position = new Vector3(4, 1.5f, -3);
             start = true;
-                globalVars.switchFlippedA = false;
+            globalVars.switchFlippedA = false;
             globalVars.movement = true;
-            globalVars.help = true;
         }
         //if (globalVars.switchFlippedA && hi==0) {
         //    orderGadget = (GameObject)Instantiate(Gadget, Gadget.transform.position, Gadget.transform.rotation); 
@@ -54,37 +50,36 @@ public class moveGadget : MonoBehaviour {
             step = Time.deltaTime*2;
 
             if (start) {
-                orderGadget.transform.position = Vector3.MoveTowards(orderGadget.transform.position, A, step);
+                Gadget.transform.position = Vector3.MoveTowards(Gadget.transform.position, A, step);
             }
-            if (orderGadget.transform.position == A) {
+            if (Gadget.transform.position == A) {
                 start = false;
                 A1 = true;
             }
 
             if (A1) {
-                orderGadget.transform.position = Vector3.MoveTowards(orderGadget.transform.position, B, step);
-
+                Gadget.transform.position = Vector3.MoveTowards(Gadget.transform.position, B, step);
             }
 
-            if (orderGadget.transform.position == B) {
+            if (Gadget.transform.position == B) {
                 B1 = true;
                 A1 = false;
             }
             if (B1) {
-                orderGadget.transform.position = Vector3.MoveTowards(orderGadget.transform.position, C, step);
+                Gadget.transform.position = Vector3.MoveTowards(Gadget.transform.position, C, step);
             }
 
-            if (orderGadget.transform.position == C) {
+            if (Gadget.transform.position == C) {
                 C1 = true;
                 B1 = false;
             }
 
             if (C1) {
-                orderGadget.transform.position = Vector3.MoveTowards(orderGadget.transform.position, D, step);
+                Gadget.transform.position = Vector3.MoveTowards(Gadget.transform.position, D, step);
             }
-            if (orderGadget.transform.position == D) {
-                meow = false;
+            if (Gadget.transform.position == D) {
                 C1 = false;
+                globalVars.movement = false;
             }
         }
     }
