@@ -85,7 +85,8 @@ public class DamageHP : MonoBehaviour
             }
             else if (playerHp == 0)
             {
-                SceneManager.LoadScene("gameover", LoadSceneMode.Single);
+                //SceneManager.LoadScene("gameover", LoadSceneMode.Single);
+                SceneManager.LoadScene(3);
                 order.PlayerHp = order.MAX_HP;
             }
         }
