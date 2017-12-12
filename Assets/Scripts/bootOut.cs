@@ -28,6 +28,15 @@ public class bootOut : MonoBehaviour {
             globalVars.acivate(false);
             globalVars.gadShape = null;
 
+            globalVars.switchFlippedD = false;
+
+            globalVars.Red = false;
+            globalVars.Orange = false;
+            globalVars.Yellow = false;
+            globalVars.Green = false;
+            globalVars.Blue = false;
+            globalVars.Purple = false;
+
         }
     }
 }

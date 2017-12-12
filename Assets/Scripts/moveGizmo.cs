@@ -31,13 +31,9 @@ public class moveGizmo : MonoBehaviour {
 
         if (moveVertical < 0) {
             transform.rotation = Quaternion.Euler(0,180,0);
-            turn = -1;
-            Debug.Log("HOT");
         }
         else if (moveVertical > 0) {
             transform.rotation = Quaternion.Euler(0, 0, 0);
-            turn = 1;
-            Debug.Log("COLD");
         }
 
 

@@ -34,6 +34,12 @@ public class order : MonoBehaviour {
                         globalVars.acivate(false);
                         globalVars.gadShape = null;
 
+                        globalVars.Red = false;
+                        globalVars.Orange = false;
+                        globalVars.Yellow = false;
+                        globalVars.Green = false;
+                        globalVars.Blue = false;
+                        globalVars.Purple = false;
                     }
                     else {
 
@@ -50,6 +56,13 @@ public class order : MonoBehaviour {
                         globalVars.movement = false;
                         globalVars.acivate(false);
                         globalVars.gadShape = null;
+
+                        globalVars.Red = false;
+                        globalVars.Orange = false;
+                        globalVars.Yellow = false;
+                        globalVars.Green = false;
+                        globalVars.Blue = false;
+                        globalVars.Purple = false;
 
                     }
 
