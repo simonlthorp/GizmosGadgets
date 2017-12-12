@@ -72,4 +72,15 @@ public class order : MonoBehaviour {
             inTrigger = false;
         }
     }
+
+    public void loseHealth()
+    {
+
+
+        PlayerHp -= 1; // damages!!
+        Debug.Log("*" + PlayerHp);
+        timeout = false;
+
+    }
+
 }
