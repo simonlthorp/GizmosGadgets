@@ -48,7 +48,6 @@ public class colorYellow : MonoBehaviour {
             if (globalVars.switchFlippedC) {
                 active = true;
                 globalVars.switchFlippedC = false;
-                Debug.Log("lo");
             }
 
 

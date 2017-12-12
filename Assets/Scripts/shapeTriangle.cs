@@ -12,7 +12,7 @@ public class shapeTriangle : MonoBehaviour {
 
     // Use this for initialization
     void OnEnable() {
-        parent = GameObject.Find(globalVars.gadName);
+        parent = GameObject.Find("Gadget");
         rendCap = parent.transform.Find("gadCapsule").GetComponent<Renderer>();
         rendTri = parent.transform.Find("gadCone").GetComponent<Renderer>();
 
@@ -23,7 +23,6 @@ public class shapeTriangle : MonoBehaviour {
 
         if (active) {
             if (globalVars.gadShape == null) {
-                Debug.Log("CONE");
                 rendCap.enabled = false;
                 rendTri.enabled = true;
                 globalVars.gadShape = "Cone";
@@ -40,14 +39,12 @@ public class shapeTriangle : MonoBehaviour {
             if (globalVars.switchFlippedB) {
                 active = true;
                 globalVars.switchFlippedB = false;
-                Debug.Log("Falsed + C");
             }
 
         }
     }
 
     void OnTriggerExit(Collider other) {
-        Debug.Log("T");
         under = false;
         active = false;
     }

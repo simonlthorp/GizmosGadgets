@@ -12,7 +12,7 @@ public class shapeDiamond : MonoBehaviour {
 
     // Use this for initialization
     void OnEnable() {
-        parent = GameObject.Find(globalVars.gadName);
+        parent = GameObject.Find("Gadget");
         rendCap = parent.transform.Find("gadCapsule").GetComponent<Renderer>();
         rendDia = parent.transform.Find("gadDiamond").GetComponent<Renderer>();
 
@@ -39,14 +39,11 @@ public class shapeDiamond : MonoBehaviour {
             if (globalVars.switchFlippedB) {
                 active = true;
                 globalVars.switchFlippedB = false;
-                Debug.Log("Falsed + D");
             }
-
         }
     }
 
     void OnTriggerExit(Collider other) {
-        Debug.Log("D");
         under = false;
         active = false;
     }
