@@ -37,7 +37,7 @@ public class customerMove : MonoBehaviour
         request = GameObject.Find("CustomerRequest");
         od = GetComponent<order>();
         levelreq = 1;
-        //  go = true;
+        editspeed = GameObject.Find("Gadget").GetComponent<moveGadget>();
     }
 
     // Update is called once per frame
