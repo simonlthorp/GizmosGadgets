@@ -2,24 +2,25 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class bringscore : MonoBehaviour {
 
-    public  Text scoring;
-    
+    //public  Text scoring;
 
+    TextMeshProUGUI scoring;
     public    int scoregetter;
 
     public int gameover;
 	// Use this for initialization
 	void Start () {
 
-       // Reseting();
-
+        // Reseting();
+        scoring = GetComponent<TextMeshProUGUI>();
         PlayerPrefs.SetInt("saved", globalVars.score);
         scoregetter = PlayerPrefs.GetInt("saved");
 
-        scoring.text = scoregetter.ToString();
+        scoring.text = "Score:" + scoregetter.ToString();
         Rank();
         
 
