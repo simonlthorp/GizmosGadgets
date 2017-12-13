@@ -7,10 +7,10 @@ public class globalVars : MonoBehaviour {
     public static bool switchFlippedA, switchFlippedB, switchFlippedC, switchFlippedD;
     public static bool Red, Orange, Yellow, Green, Blue, Purple;
     public static bool A, B, C, D, E, F;
-    public static string gadName;
+    public static string gadName = "Gadget";
     bool end;
+    public static bool GadgetInactive;
     public static bool movement;
-    public static bool help;
     public GameObject s1, s2, s3, cR, cY, cB;
     public static GameObject shape1, shape2, shape3, colRed, colYel, colBlu;
     public static int score;
@@ -27,6 +27,9 @@ public class globalVars : MonoBehaviour {
         switchFlippedD = false;
 
         gadShape = null;
+        gadColor = null;
+
+        GadgetInactive = true;
 
         Red = false;
         Orange = false;
@@ -42,7 +45,6 @@ public class globalVars : MonoBehaviour {
         E = false;
         F = false;
         movement = false;
-        help = false;
 
         shape1 = s1;
         shape2 = s2;
@@ -78,6 +80,41 @@ public class globalVars : MonoBehaviour {
             colRed.GetComponent<colorREd>().enabled = false;
             colBlu.GetComponent<colorBlue>().enabled = false;
             colYel.GetComponent<colorYellow>().enabled = false;
+        }
+
+    }
+
+    public static void ResetGadget() {
+        GameObject Gadg;
+        Material Default = new Material(Shader.Find("toon/Cg shader for toon shading"));
+
+        GadgetInactive = true;
+        carry = false;
+        movement = false;
+        acivate(false);
+        gadShape = null;
+        gadColor = null;
+
+        Red = false;
+        Orange = false;
+        Yellow = false;
+        Green = false;
+        Blue = false;
+        Purple = false;
+
+        Default.color = Color.white;
+
+        Gadg = GameObject.Find("Gadget");
+
+        Gadg.transform.position = new Vector3(4, 3, -3);
+        Gadg.transform.Find("gadCapsule").GetComponent<Renderer>().enabled = true;
+        Gadg.transform.Find("gadCone").GetComponent<Renderer>().enabled = false;
+        Gadg.transform.Find("gadDiamond").GetComponent<Renderer>().enabled = false;
+        Gadg.transform.Find("gadSphere").GetComponent<Renderer>().enabled = false;
+
+        Renderer[] renderers = Gadg.GetComponentsInChildren<Renderer>();
+        foreach (var r in renderers) {
+            r.material = Default;
         }
 
     }

@@ -25,19 +25,16 @@ public class colorBlue : MonoBehaviour {
                     r.material = Purple;
                     globalVars.Purple = true;
                     globalVars.gadColor = "Purple";
-
                 }
                 else if (globalVars.Yellow) {
                     r.material = Green;
                     globalVars.Green = true;
                     globalVars.gadColor = "Green";
-
                 }
                 else {
                     r.material = Blue;
                     globalVars.gadColor = "Blue";
                 }
-
             }
             active = false;
         }
@@ -46,15 +43,11 @@ public class colorBlue : MonoBehaviour {
     void OnTriggerStay(Collider other) {
         under = true;
         if (other.gameObject.tag == "1Gadget") {
-
             if (globalVars.switchFlippedC) {
                 active = true;
                 globalVars.switchFlippedC = false;
             }
-
-
         }
-
     }
 
     void onTriggerExit(Collider other) {
