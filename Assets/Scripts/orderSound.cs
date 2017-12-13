@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class orderSound : MonoBehaviour {
     AudioSource audioSource;
+    public GameObject other;
+    
     bool inTrigger;
     int colorLevel;
 
@@ -12,6 +14,7 @@ public class orderSound : MonoBehaviour {
     // Use this for initialization
     void Start () {
         audioSource = GetComponent<AudioSource>();
+        other = GameObject.Find("OrderWrongSound");
         colorLevel = 1;
     }
 	
@@ -31,8 +34,8 @@ public class orderSound : MonoBehaviour {
                     }
                     else
                     {
-
-                        audioSource.Stop();
+                        other.GetComponent<AudioSource>().Play();
+                        
 
                     }
                 }

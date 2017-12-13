@@ -10,11 +10,16 @@ public class CustomerRequest : MonoBehaviour {
     private GameObject colorRequest;
     private GameObject objectRequest;
     private GameObject objectReq;
+    public GameObject sound1;
+    public GameObject sound2;
+    public GameObject sound3;
     private int colorDifficulty; // can be between 1 and 6
 
 	// Use this for initialization
 	void Start () {
-
+        sound1 = GameObject.Find("Sound1");
+        sound2 = GameObject.Find("Sound2");
+        sound3 = GameObject.Find("Sound3");
         colorDifficulty = 6; // difficulty determines number of colors possible
         ChooseColor(colorDifficulty);
 
@@ -47,18 +52,21 @@ public class CustomerRequest : MonoBehaviour {
             objectRequest = this.transform.Find("ObjectRequest").gameObject;
             objectReq = objectRequest.transform.Find("Sphere").gameObject;
             globalVars.orderShape = "Sphere";
+            sound1.GetComponent<AudioSource>().Play();
         }
         else if(objectRand == 1) //Cone
         {
             objectRequest = this.transform.Find("ObjectRequest").gameObject;
             objectReq = objectRequest.transform.Find("Cone").gameObject;
             globalVars.orderShape = "Cone";
+            sound2.GetComponent<AudioSource>().Play();
         }
         else if (objectRand == 2) //Diamond
         {
             objectRequest = this.transform.Find("ObjectRequest").gameObject;
             objectReq = objectRequest.transform.Find("Diamond").gameObject;
             globalVars.orderShape = "Diamond";
+            sound3.GetComponent<AudioSource>().Play();
         }
 
         objectReq.SetActive(true);
