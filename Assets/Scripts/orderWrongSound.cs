@@ -26,19 +26,19 @@ public class orderWrongSound : MonoBehaviour {
             {
                 if (globalVars.carry)
                 {
-                    if (globalVars.orderShape == globalVars.gadShape && globalVars.orderColor == globalVars.gadColor)
+                    if (globalVars.orderShape != globalVars.gadShape && globalVars.orderColor != globalVars.gadColor)
                     {
 
-
-                        audioSource.Stop();
-
-                    }
-                    else
-                    {
 
                         audioSource.Play();
 
                     }
+                    //else
+                    //{
+
+                    //    audioSource.Play();
+
+                    //}
                 }
 
             }

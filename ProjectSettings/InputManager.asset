@@ -9,10 +9,10 @@ InputManager:
     m_Name: Horizontal
     descriptiveName: 
     descriptiveNegativeName: 
-    negativeButton: right
-    positiveButton: left
-    altNegativeButton: d
-    altPositiveButton: a
+    negativeButton: left
+    positiveButton: right
+    altNegativeButton: a
+    altPositiveButton: d
     gravity: 3
     dead: 0.001
     sensitivity: 3
@@ -99,7 +99,7 @@ InputManager:
     snap: 1
     invert: 1
     type: 2
-    axis: 5
+    axis: 0
     joyNum: 0
   - serializedVersion: 3
     m_Name: Vertical

@@ -6,8 +6,6 @@ using UnityEngine;
 public class moveGizmo : MonoBehaviour {
     private Rigidbody rb;
     GameObject obj;
-    bool faceMachine;
-    int turn = 1;
     bool objGet;
 
     float moveVertical;
@@ -16,7 +14,6 @@ public class moveGizmo : MonoBehaviour {
     // Use this for initialization
     void Start () {
         rb = GetComponent<Rigidbody>();
-        faceMachine = false;
         objGet = false;
     }
 
@@ -31,23 +28,17 @@ public class moveGizmo : MonoBehaviour {
 
         if (moveVertical < 0) {
             transform.rotation = Quaternion.Euler(0,180,0);
-            turn = -1;
-            Debug.Log("HOT");
         }
         else if (moveVertical > 0) {
             transform.rotation = Quaternion.Euler(0, 0, 0);
-            turn = 1;
-            Debug.Log("COLD");
         }
 
 
-        Vector3 movement = new Vector3((moveHorizontal)*(turn), 0.0f, 0.0f);
+        Vector3 movement = new Vector3((moveHorizontal)*(-1), 0.0f, 0.0f);
 
         if (globalVars.carry) {
 
             globalVars.acivate(false);
-            globalVars.help = false;
-            Debug.Log("helloo");
             globalVars.deployedGadget.gameObject.transform.position = new Vector3(transform.position.x, (transform.position.y + 0.5f), transform.position.z);
         }
 
@@ -59,8 +50,6 @@ public class moveGizmo : MonoBehaviour {
             objGet = true;
             globalVars.carry = true;
             globalVars.deployedGadget = other.gameObject;
-            Debug.Log("Shape: " + globalVars.gadShape);
-            Debug.Log("Color: " + globalVars.gadColor);
         }
     }
 

@@ -1,0 +1,15 @@
+1. Orders
+	a. visual request timer
+2. Level Difficulty
+	a. order difficulty needs to scale
+	b. speed needs to scale
+3. Boot bug
+	a. after boot is used, following objects disapear at the boot
+4. Shader
+	a. add a toon shader to everything
+5. Scoring
+	a. track high scores
+	b. highscores page
+	c. game over screen
+6. PS4
+	a. loads on PS4 but menu buttons do not work

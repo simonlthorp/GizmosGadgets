@@ -13,11 +13,8 @@ public class colorFlip : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
-        if (Input.GetAxis("Fire1") != 0 && inTrigger) {
-            if (Input.GetAxisRaw("Fire1") != 0) {
-
-                globalVars.switchFlippedC = true;
-            }
+        if (Input.GetButtonDown("Fire1") && inTrigger) {
+            globalVars.switchFlippedC = true;
         }
     }
 
