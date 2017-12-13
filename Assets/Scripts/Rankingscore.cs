@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class Rankingscore : MonoBehaviour {
-    public Text ranking;
-	// Use this for initialization
-	void Start () {
+    TextMeshProUGUI ranking;
+    // Use this for initialization
+    void Start () {
+        ranking = GetComponent<TextMeshProUGUI>();
         ranking.text=
         "1. " + PlayerPrefs.GetInt("4") + "\n" +
               "2. " + PlayerPrefs.GetInt("3") + "\n" +
