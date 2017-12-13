@@ -9,9 +9,11 @@ public class moveGadget : MonoBehaviour {
     public float step;
     public GameObject Gadget;
     GameObject orderGadget;
+
+    private customerMove cm;
     // Use this for initialization
     void Start () {
-		
+        cm = GameObject.Find("CustomerHead").GetComponent<customerMove>();
 	}
 	
 	// Update is called once per frame
@@ -47,7 +49,7 @@ public class moveGadget : MonoBehaviour {
             Vector3 C = new Vector3(4, 1.45f, -0.5f);
             Vector3 D = new Vector3(4, 1.45f, 1.5f);
 
-            step = Time.deltaTime*2;
+            step = Time.deltaTime * (2 + cm.level/2);
 
             if (start) {
                 Gadget.transform.position = Vector3.MoveTowards(Gadget.transform.position, A, step);
